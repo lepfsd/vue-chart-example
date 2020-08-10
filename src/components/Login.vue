@@ -41,7 +41,7 @@
 
 <script>
 
-import User from '../Services/User';
+import {loggedIn, login} from '../Services/User';
 
 
 export default {
@@ -54,13 +54,13 @@ export default {
         }
     },
     created() {
-      if(this.loggedIn()){
+      if(loggedIn()){
         this.$router.push({name: 'transactions'})
       }
     },
     methods: {
         login(){
-            this.login(this.form)
+            login(this.form)
         }
     }
 }

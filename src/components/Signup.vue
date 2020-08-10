@@ -12,13 +12,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="name" class="">Name</label>
-                                    <input type="text" class="form-control" v-model="name">
+                                    <input type="text" class="form-control" v-model="form.name">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email" class="">E-Mail Address</label>
-                                    <input type="email" class="form-control" v-model="email">
+                                    <input type="email" class="form-control" v-model="form.email">
                                 </div>
                             </div>
                         </div>
@@ -26,7 +26,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="password" class="">Password</label>
-                                    <input type="password" class="form-control" v-model="password">
+                                    <input type="password" class="form-control" v-model="form.password">
                                 </div>
                             </div>
                         </div>
@@ -48,6 +48,8 @@
 </template>
 
 <script>
+import {responseAfterLogin} from '../Services/User';
+import axios from 'axios'
 
 export default {
     data() {
@@ -57,6 +59,16 @@ export default {
                 name: null,
                 password: null
             }
+        }
+    },
+    methods: {
+        signup(){
+            axios.post('http://127.0.0.1:3000/api/auth/signup', this.form)
+                .then(res => {
+                    responseAfterLogin(res)
+                    this.$router.push({name: 'transactions'})
+                })
+                .catch(error => this.errors = error.response.data.errors)
         }
     }
 }

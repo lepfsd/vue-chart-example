@@ -1,30 +1,36 @@
-export class AppStorage 
-{
-    storeToken(token) {
+
+    var storeToken = (token) =>{
         return localStorage.setItem('token', token)
     }
 
-    storeUser(user) {
+    var storeUser = (user) =>{
         return localStorage.setItem('user', user)
     }
 
-    store(user, token) {
+    var store = (user, token) =>{
         this.storeToken(token)
         this.storeUser(user)
         
     }
 
-    clear() {
+    var clear = () => {
         localStorage.removeItem('token')
         localStorage.removeItem('user')
     }
 
-    getToken() {
+    var getToken = () =>{
         return localStorage.getItem('token')
     }
 
-    getuser() {
+    var getuser = () =>{
         return localStorage.getItem('user')
     }
 
+export {
+    storeToken,
+    storeUser,
+    store,
+    clear,
+    getToken,
+    getuser
 }
