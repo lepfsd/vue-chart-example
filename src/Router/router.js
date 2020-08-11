@@ -10,6 +10,7 @@ import Credit  from '../components/Credit.vue'
 import Withdraw  from '../components/Withdraw.vue'
 import Transactions  from '../components/Transactions.vue'
 import Payments  from '../components/Payments.vue'
+import Balance  from '../components/Balance.vue'
 
 const routes = [
     { path: '/login', component: Login },
@@ -19,6 +20,7 @@ const routes = [
     { path: '/debit', component: Withdraw },
     { path: '/transactions', component: Transactions },
     { path: '/payment', component: Payments },
+    { path: '/wallet_balance', component: Balance },
 ]
 
 

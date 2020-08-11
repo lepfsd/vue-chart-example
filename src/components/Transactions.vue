@@ -1,6 +1,14 @@
 <template>
   <div>
       <div class="container">
+          <div class="card mb-3">
+              <div class="card-header">
+                  Your account balance: 
+              </div>
+              <div class="card-body"> 
+                  <strong>$ 1000</strong>
+              </div>
+          </div>
           <div class="card">
             <div class="card-header">
                 transactions 

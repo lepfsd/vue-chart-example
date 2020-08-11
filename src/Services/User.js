@@ -53,11 +53,6 @@ const id = () => {
     }
 }
 
-const own = (id) => {
-    return (id() == id)
-}
-
-
 export {
     loggedIn,
     login,
@@ -65,7 +60,6 @@ export {
     hasToken,
     logout,
     name,
-    id,
-    own
+    id
 
 }

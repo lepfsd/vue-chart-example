@@ -22,7 +22,7 @@
         return localStorage.getItem('token')
     }
 
-    var getuser = () =>{
+    var getUser = () =>{
         return localStorage.getItem('user')
     }
 
@@ -32,5 +32,5 @@ export {
     store,
     clear,
     getToken,
-    getuser
+    getUser
 }

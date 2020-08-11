@@ -1,13 +1,13 @@
 
 
-var payload = (token) => {
-    var payload = token.split('.')[1]
+const payload = (token) => {
+    const payload = token.split('.')[1]
     
     return JSON.parse(atob(payload))
 }
 
-var isValid = (token) => {
-    var payload = payload(token)
+const isValid = (token) => {
+    const payload = payload(token)
        
     if(payload){
         return payload.iss == "http://127.0.0.1:3000/api/auth/login" ? true : false

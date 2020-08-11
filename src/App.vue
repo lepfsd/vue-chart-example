@@ -2,6 +2,7 @@
   <div>
      <navbar></navbar>
      <router-view></router-view>
+     
       
   </div>
 </template>
@@ -9,7 +10,7 @@
 <script>
 
 import navbar from './components/Navbar'
-//import footer from './components/Footer'
+
 
 
 export default {
